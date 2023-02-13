@@ -3,25 +3,14 @@ import openpyxl
 import random
 from queue import Queue
 
-# try:
-#     wb = openpyxl.load_workbook("LunchBuds.xlsx")
-#     ws = wb.worksheets[0]
-#     ws['A1'] = 1
-#     ws.cell(row=2, column=3).value = "Letters 3"
-#     ws.cell(row=2, column=4).value = "Letters 4"
-#     ws.cell(row=1, column=3).value = "Week 2"
-#     wb.save("LunchBuds.xlsx")
-# except:
-#     raise SystemExit(0)
-
-path = "/Users/yoonsoonam/Desktop/Scope/lunchBuds/LunchBuds.xlsx"
+path = "LunchBuds.xlsx"
 
 df = pd.read_excel(path)
 df.head()
 allMems = df["Names"]
 nameMap = {}
 justNames = []
-eboards = set(["Isabella Paine", "Kelly Kenyon", "Paul Somodi", "Yoonsoo Nam", "Jake Kendell", "Nicole Russack", "Moses Lee", "Ethan Park"])
+eboards = set([""]) #put eboard names here
 totalWeeks = len(df.columns)
 
 for name in allMems:
@@ -85,3 +74,5 @@ except:
 
 for r in result:
     print(r + " <-> " + result[r])
+    # print empty line
+    print()
