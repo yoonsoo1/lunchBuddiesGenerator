@@ -14,7 +14,7 @@ from queue import Queue
 # except:
 #     raise SystemExit(0)
 
-path = "/Users/yoonsoonam/Desktop/Scope/LunchBuds.xlsx"
+path = "/Users/yoonsoonam/Desktop/Scope/lunchBuds/LunchBuds.xlsx"
 
 df = pd.read_excel(path)
 df.head()
@@ -43,9 +43,9 @@ for idx in range(len(justNames)):
         continue
 
     if currMem in eboards:
-        available = [x for x in justNames if x not in eboards and x not in nameMap[currMem] and x != currMem not in matched]
+        available = [x for x in justNames if x not in eboards and x not in nameMap[currMem] and x != currMem and x not in matched]
     else:
-        available = [x for x in justNames if x not in nameMap[currMem] and x != currMem not in matched]
+        available = [x for x in justNames if x not in nameMap[currMem] and x != currMem and x not in matched]
     random.shuffle(available)
     for match in available:
         if match in matched:
